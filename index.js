@@ -1,0 +1,14 @@
+/* jshint node: true */
+'use strict';
+
+module.exports = {
+  name: 'ember-cli-tinymce',
+  contentFor: function(type, config) {
+    var content = '';
+    if (type === 'head-footer') {
+      var src = "//cdn.tinymce.com/4/tinymce.min.js",
+      content = '<script type="text/javascript" src="' + src + '"></script>';
+    }
+    return content;
+  }
+};
