@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-tinymce",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "The ember editor powered by tinyMCE",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -45,6 +45,7 @@
     "ember-cli-htmlbars": "^1.0.3"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://marucjmar18.github.io/ember-cli-tinymce"
   }
 }
