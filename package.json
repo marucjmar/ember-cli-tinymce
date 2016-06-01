@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-tinymce",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The ember editor powered by tinyMCE",
   "directories": {
     "doc": "doc",
@@ -11,12 +11,10 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": [
-    {
+  "repository": {
       "type" : "git",
       "url" : "https://github.com/marucjmar18/ember-cli-tinymce.git"
-    }
-  ],
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
