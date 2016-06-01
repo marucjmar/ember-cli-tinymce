@@ -1,3 +1,28 @@
+Ember-cli-tinymce
+-----------------
+This ember-cli addon provides you with a wysiwyg-editor component, based on [TinyMCE](https://www.tinymce.com/)
+
+#Installation
+To get started simply install the addon:
+
+     ember install ember-cli-tinymce
+
+
+##Component##
+
+
+    {{tinymce-editor options=options value=text}}
+
+
+ - *options* attribute is full powered to [tinymce documentation](https://www.tinymce.com/docs/configure/). when options did changed, then editor is update.
+ - *value* - the html text generate by editor.
+
+If you should display the *value*, use the *{{{value}}}* helper for HTML text in the handlebars.
+
+
+
+
+
 # Ember-cli-tinymce
 
 This README outlines the details of collaborating on this Ember addon.
