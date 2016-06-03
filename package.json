@@ -13,7 +13,7 @@
   },
   "repository": {
       "type" : "git",
-      "url" : "https://github.com/marucjmar18/ember-cli-tinymce.git"
+      "url" : "https://github.com/marucjmar/ember-cli-tinymce.git"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -49,6 +49,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://marucjmar18.github.io/ember-cli-tinymce"
+    "demoURL": "http://marucjmar.github.io/ember-cli-tinymce"
   }
 }
