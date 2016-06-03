@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-tinymce",
   "version": "0.0.4",
-  "description": "The ember editor powered by tinyMCE",
+  "description": "The ember WYSIWYG editor powered by tinyMCE",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -41,7 +41,13 @@
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember",
+    "cli",
+    "wysiwyg",
+    "editor",
+    "emberjs",
+    "text"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",

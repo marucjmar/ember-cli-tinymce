@@ -2,6 +2,11 @@ Ember-cli-tinymce
 -----------------
 This ember-cli addon provides you with a wysiwyg-editor component, based on [TinyMCE](https://www.tinymce.com/)
 
+
+##Demo
+
+[Demo page](http://marucjmar.github.io/ember-cli-tinymce)
+
 #Installation
 To get started simply install the addon:
 
@@ -21,6 +26,7 @@ If you should display the *value*, use the *{{{value}}}* helper for HTML text in
 
 
 
+## MIT License
 
 
 # Ember-cli-tinymce
