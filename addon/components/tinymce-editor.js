@@ -14,14 +14,15 @@ export default Ember.Component.extend({
 
   // Change de value if editor content changes
   contentChanged(editor) {
-    this.set('value', this.get('editor').getContent())
+    this.set('value', editor.getContent());
   },
 
+  //Bind events to function
   setEvents: Ember.observer('editor', function() {
-    let editor = this.get('editor'), self =  this
+    let editor = this.get('editor'), self =  this;
     editor.on('change keyup keydown keypress mousedown', function(){
       Ember.run.debounce(self, self.contentChanged, editor, 1);
-    })
+    });
   }),
 
   // Initialize tinymce
@@ -32,12 +33,14 @@ export default Ember.Component.extend({
       selector: `#${self.get('elementId')}`,
       init_instance_callback : function(editor) {
         self.set('editor', editor);
+        self.get('editor').setContent(self.get('value')); //Set content with default text  
       },
     };
 
-    if (editor)
-      editor.destroy()
+    if (editor){
+      editor.destroy();
+    }
 
-    tinymce.init($.extend( customOptions, options ));
+    tinymce.init(Ember.$.extend( customOptions, options ));
   }))
 });
