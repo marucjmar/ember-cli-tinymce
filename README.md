@@ -26,7 +26,7 @@ If you should display the *value*, use the *{{{value}}}* helper for HTML text in
 
 ##You can set the load partial
 
-encvironment.js config
+environment.js config
 
     ENV:{
       ...,
