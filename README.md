@@ -13,7 +13,7 @@ To get started simply install the addon:
      ember install ember-cli-tinymce
 
 
-##Component##
+##Component
 
 
     {{tinymce-editor options=options value=text}}
@@ -23,6 +23,29 @@ To get started simply install the addon:
  - *value* - the html text generate by editor.
 
 If you should display the *value*, use the *{{{value}}}* helper for HTML text in the handlebars.
+
+##You can set the load partial
+
+encvironment.js config
+
+    ENV:{
+      ...,
+      tinyMCE:{
+        load: false
+      }
+    }
+
+In route
+
+    beforeModel(){
+      this._super(...arguments);
+      if (typeof tinymce == 'undefined'){
+        return Ember.$.getScript('//cdn.tinymce.com/4/tinymce.min.js');
+      }
+    }
+
+
+
 
 
 
