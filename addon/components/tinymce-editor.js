@@ -1,5 +1,4 @@
 import Ember from 'ember';
-
 const {observer, on, run} = Ember;
 
 export default Ember.Component.extend({
