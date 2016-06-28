@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   tagName: 'textarea',
 
   // Change the editor content if value changes
-  valueChanged: Ember.observer('value', function() {
+  valueChanged: observer('value', function() {
     let editor = this.get('editor');
     if (editor && editor.getContent() !== this.get('value')) {
       editor.setContent(this.get('value') || '');
@@ -29,7 +29,7 @@ export default Ember.Component.extend({
 
   // Initialize tinymce
   initTiny: on('didInsertElement', observer('options', function() {
-    let {options, editor} = this.getProperties('options', 'editor')
+    let {options, editor} = this.getProperties('options', 'editor');
 
     let customOptions = {
       selector: `#${this.get('elementId')}`,
