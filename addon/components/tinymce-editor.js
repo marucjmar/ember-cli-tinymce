@@ -16,7 +16,7 @@ export default Ember.Component.extend({
 
   // Change de value if editor content changes
   contentChanged(editor) {
-    this.set('value', editor.getContent());
+    this.set('value', this.get('editor').getContent());
   },
 
   //Bind events to function
