@@ -35,7 +35,7 @@ export default Ember.Component.extend({
       selector: `#${this.get('elementId')}`,
       init_instance_callback : (editor) => {
         this.set('editor', editor);
-        this.get('editor').setContent(this.get('value')); //Set content with default text
+        this.get('editor').setContent(this.get('value') || ''); //Set content with default text
       },
     };
 
