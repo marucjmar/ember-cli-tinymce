@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+const {observer, on, run} = Ember;
+
 export default Ember.Component.extend({
   editor: undefined,
   tagName: 'textarea',
@@ -18,22 +20,22 @@ export default Ember.Component.extend({
   },
 
   //Bind events to function
-  setEvents: Ember.observer('editor', function() {
-    let editor = this.get('editor'), self =  this;
-    editor.on('change keyup keydown keypress mousedown', function(){
-      Ember.run.debounce(self, self.contentChanged, editor, 1);
+  setEvents: observer('editor', function() {
+    let editor = this.get('editor');
+    editor.on('change keyup keydown keypress mousedown', ()=>{
+      run.debounce(this, this.contentChanged, editor, 1);
     });
   }),
 
   // Initialize tinymce
-  initTiny: Ember.on('didInsertElement', Ember.observer('options', function() {
-    var self = this, options = this.get('options'), editor = this.get('editor');
+  initTiny: on('didInsertElement', observer('options', function() {
+    let {options, editor} = this.getProperties('options', 'editor')
 
     let customOptions = {
-      selector: `#${self.get('elementId')}`,
-      init_instance_callback : function(editor) {
-        self.set('editor', editor);
-        self.get('editor').setContent(self.get('value')); //Set content with default text  
+      selector: `#${this.get('elementId')}`,
+      init_instance_callback : (editor) => {
+        this.set('editor', editor);
+        this.get('editor').setContent(this.get('value')); //Set content with default text
       },
     };
 
