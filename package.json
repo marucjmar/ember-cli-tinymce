@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-tinymce",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "The ember WYSIWYG editor powered by tinyMCE",
   "directories": {
     "doc": "doc",
