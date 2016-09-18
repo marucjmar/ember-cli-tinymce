@@ -43,5 +43,14 @@ export default Ember.Component.extend({
     }
 
     tinymce.init(Ember.$.extend( customOptions, options ));
-  }))
+  })),
+
+  // Destroy tinymce editor instance when editor is removed from the page.  Otherwise, it won't be
+  // created again when added back to the page (i.e. navigating away from and back to the route).
+  cleanUp: on('willDestroyElement', function() {
+    let editor = this.get('editor');
+    if (editor) {
+      editor.destroy();
+    }
+  })
 });
