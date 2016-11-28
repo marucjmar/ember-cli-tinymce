@@ -4,7 +4,8 @@
 module.exports = function(/* environment, appConfig */) {
   return {
     tinyMCE:{
-      load: true
+      load: true,
+      ver: 4.4
     }
   };
 };

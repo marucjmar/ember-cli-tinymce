@@ -44,8 +44,16 @@ In route
       }
     }
 
-
-
+##You can also set the version to fetch from the CDN
+ - be aware *ver* is a semver reflection of the Tinymce CDN which can introduce issues if a bad release is automatically picked up by your application
+```
+ENV:{
+  ...,
+  tinyMCE:{
+    ver: 4
+  }
+}
+```
 
 
 
