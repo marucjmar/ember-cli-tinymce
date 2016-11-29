@@ -50,7 +50,7 @@ In route
 ENV:{
   ...,
   tinyMCE:{
-    ver: 4
+    version: 4 //default 4.4
   }
 }
 ```

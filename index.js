@@ -7,7 +7,7 @@ module.exports = {
     var content = '';
 
     if (type === 'head-footer' && config['tinyMCE'] && config['tinyMCE']['load']) {
-      var src = "//cdn.tinymce.com/"+ config['tinyMCE']['ver'] +"/tinymce.min.js",
+      var src = `//cdn.tinymce.com/${config['tinyMCE']['ver']}/tinymce.min.js`,
       content = '<script type="text/javascript" src="' + src + '"></script>';
     }
     return content;
