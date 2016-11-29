@@ -55,7 +55,7 @@ ENV:{
 ```
 
 #My reputation
-You can help me with my reputation, when you give me a star on github :+1:
+If you used and love this addon You can help me with my reputation, when you give me a star on github :+1:
 
 
 ## MIT License
