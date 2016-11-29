@@ -2,7 +2,6 @@ Ember-cli-tinymce
 -----------------
 This ember-cli addon provides you with a wysiwyg-editor component, based on [TinyMCE](https://www.tinymce.com/)
 
-
 ##Demo
 
 [Demo page](http://marucjmar.github.io/ember-cli-tinymce)
@@ -55,34 +54,12 @@ ENV:{
 }
 ```
 
+#My reputation
+You can help me with my reputation, when you give me a star on github :+1:
 
 
 ## MIT License
 
-
-# Ember-cli-tinymce
-
 This README outlines the details of collaborating on this Ember addon.
-
-## Installation
-
-* `git clone` this repository
-* `npm install`
-* `bower install`
-
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
 
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
