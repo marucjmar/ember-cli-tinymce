@@ -4,6 +4,7 @@ const {observer, on, run} = Ember;
 export default Ember.Component.extend({
   editor: undefined,
   tagName: 'textarea',
+  destroying: false,
 
   // Change the editor content if value changes
   valueChanged: observer('value', function() {
@@ -22,6 +23,7 @@ export default Ember.Component.extend({
   setEvents: observer('editor', function() {
     let editor = this.get('editor');
     editor.on('change keyup keydown keypress mousedown', ()=>{
+      if(this.get('destroying')){ return; }
       run.debounce(this, this.contentChanged, editor, 1);
     });
   }),
@@ -50,6 +52,7 @@ export default Ember.Component.extend({
   cleanUp: on('willDestroyElement', function() {
     let editor = this.get('editor');
     if (editor) {
+      this.set('destroying', true);
       editor.destroy();
     }
   })
