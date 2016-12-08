@@ -4,6 +4,7 @@ const {observer, on, run} = Ember;
 export default Ember.Component.extend({
   editor: undefined,
   tagName: 'textarea',
+  _contentChangedListner: null,
 
   // Change the editor content if value changes
   valueChanged: observer('value', function() {
@@ -21,9 +22,12 @@ export default Ember.Component.extend({
   //Bind events to function
   setEvents: observer('editor', function() {
     let editor = this.get('editor');
-    editor.on('change keyup keydown keypress mousedown', ()=>{
+
+    this._contentChangedListner = run.bind(this, ()=> {
       run.debounce(this, this.contentChanged, editor, 1);
     });
+
+    editor.on('change keyup keydown keypress mousedown', this._contentChangedListner);
   }),
 
   // Initialize tinymce
@@ -50,6 +54,7 @@ export default Ember.Component.extend({
   cleanUp: on('willDestroyElement', function() {
     let editor = this.get('editor');
     if (editor) {
+      editor.off('change keyup keydown keypress mousedown', this._contentChangedListner);
       editor.destroy();
     }
   })
