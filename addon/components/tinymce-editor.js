@@ -1,3 +1,4 @@
+/*global tinymce */
 import Ember from 'ember';
 const {observer, on, run} = Ember;
 
@@ -14,9 +15,15 @@ export default Ember.Component.extend({
     }
   }),
 
-  // Change de value if editor content changes
+  // Default implementation which will update the value. 
+  // To follow DDAU guidlines you can override this method by defining the action onValueChanged=(action "yourMethod")
+  onValueChanged(value) {
+    this.set('value', value);
+  },
+
+  // Call onValueChanged if editor content changes
   contentChanged(editor) {
-    this.set('value', editor.getContent());
+    this.onValueChanged(editor.getContent());
   },
 
   //Bind events to function

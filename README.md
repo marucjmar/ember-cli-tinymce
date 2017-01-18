@@ -23,6 +23,23 @@ To get started simply install the addon:
 
 If you should display the *value*, use the *{{{value}}}* helper for HTML text in the handlebars.
 
+##DDAU
+By default the value is updated in the addon. If you want to follow DDAU guidlines please define the onValueChanged action.
+```hbs
+  {{tinymce-editor options=options value=text onValueChanged=(action "myOnChangedAction")}}
+```
+
+and in your controller
+```hbs
+  actions:{
+    ...
+    myOnChangedAction (value) => {
+      // Do something with the value. 
+      // At least the text should be updated:
+      this.set('text', value)
+    }
+  }
+```
 ##You can set the load partial
 
 environment.js config
