@@ -50,7 +50,7 @@ export default Ember.Component.extend({
     };
 
     if (editor){
-      editor.setContent('')
+      editor.setContent('');
       editor.destroy();
     }
 
