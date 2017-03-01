@@ -15,7 +15,7 @@ export default Ember.Component.extend({
     }
   }),
 
-  // Default implementation which will update the value. 
+  // Default implementation which will update the value.
   // To follow DDAU guidlines you can override this method by defining the action onValueChanged=(action "yourMethod")
   onValueChanged(value) {
     this.set('value', value);
@@ -50,6 +50,7 @@ export default Ember.Component.extend({
     };
 
     if (editor){
+      editor.setContent('')
       editor.destroy();
     }
 
