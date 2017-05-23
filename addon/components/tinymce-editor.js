@@ -4,8 +4,13 @@ const {observer, on, run} = Ember;
 
 export default Ember.Component.extend({
   editor: undefined,
-  tagName: 'textarea',
   _contentChangedListener: null,
+
+  willInsertElement: observer('options', function() {
+    let options = this.getProperties('options') || {};
+    this.tagName = options.inline === true ? "div" : "textarea";
+  }),
+
 
   // Change the editor content if value changes
   valueChanged: observer('value', function() {
