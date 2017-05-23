@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   menuBar: true,
   options: {
+    inline:true,
     height: 300,
     theme: 'modern',
     plugins: [
