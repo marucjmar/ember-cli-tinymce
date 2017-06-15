@@ -23,7 +23,8 @@ export default Ember.Component.extend({
 
   // Call onValueChanged if editor content changes
   contentChanged(editor) {
-    this.onValueChanged(editor.getContent());
+    if (!editor.isNotDirty)
+      this.onValueChanged(editor.getContent());
   },
 
   //Bind events to function
