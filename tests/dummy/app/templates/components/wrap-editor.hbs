@@ -1,1 +1,9 @@
-{{tinymce-editor options=options value=value}}
+{{#if isShowingModal}}
+  {{#modal-dialog translucentOverlay=false}}
+    {{tinymce-editor options=options value=value}}
+    <button {{action 'toggleModal'}}>Toggle modal</button>
+  {{/modal-dialog}}
+{{/if}}
+
+<button {{action 'toggleModal'}}>Toggle modal</button>
+
