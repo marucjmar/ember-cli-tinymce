@@ -54,8 +54,10 @@ export default Ember.Component.extend({
       editor.setContent('');
       editor.destroy();
     }
-
-    tinymce.init(Ember.$.extend( customOptions, options ));
+    
+    run.later(()=>{
+      tinymce.init(Ember.$.extend( customOptions, options ));
+    }, 10)      
   })),
 
   // Destroy tinymce editor instance when editor is removed from the page.  Otherwise, it won't be
