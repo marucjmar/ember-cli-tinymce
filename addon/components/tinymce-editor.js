@@ -1,4 +1,3 @@
-/*global tinymce */
 import Ember from 'ember';
 const {observer, on, run} = Ember;
 
@@ -7,7 +6,6 @@ export default Ember.Component.extend({
   tagName: 'textarea',
   _contentChangedListener: null,
 
-  // Change the editor content if value changes
   valueChanged: observer('value', function() {
     let editor = this.get('editor');
     if (editor && editor.getContent() !== this.get('value')) {
@@ -15,19 +13,15 @@ export default Ember.Component.extend({
     }
   }),
 
-  // Default implementation which will update the value.
-  // To follow DDAU guidlines you can override this method by defining the action onValueChanged=(action "yourMethod")
   onValueChanged(value) {
     this.set('value', value);
   },
 
-  // Call onValueChanged if editor content changes
   contentChanged(editor) {
     if (!editor.isNotDirty)
       this.onValueChanged(editor.getContent());
   },
 
-  //Bind events to function
   setEvents: observer('editor', function() {
     let editor = this.get('editor');
 
@@ -38,13 +32,12 @@ export default Ember.Component.extend({
     editor.on('change keyup keydown keypress mousedown', this._contentChangedListener);
   }),
 
-  // Initialize tinymce
   initTiny: on('didInsertElement', observer('options', function() {
     let {options, editor} = this.getProperties('options', 'editor');
 
     let customOptions = {
       selector: `#${this.get('elementId')}`,
-      init_instance_callback : (editor) => {
+      init_instance_callback: (editor) => {
         this.set('editor', editor);
         this.get('editor').setContent(this.get('value') || ''); //Set content with default text
       },
@@ -55,13 +48,11 @@ export default Ember.Component.extend({
       editor.destroy();
     }
     
-    run.later(()=>{
+    run.later( () => {
       tinymce.init(Ember.$.extend( customOptions, options ));
     }, 10)      
   })),
 
-  // Destroy tinymce editor instance when editor is removed from the page.  Otherwise, it won't be
-  // created again when added back to the page (i.e. navigating away from and back to the route).
   cleanUp: on('willDestroyElement', function() {
     let editor = this.get('editor');
     if (editor) {
