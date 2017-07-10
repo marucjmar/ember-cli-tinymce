@@ -2,7 +2,7 @@
 
 This ember-cli addon provides you with a wysiwyg-editor component, based on [TinyMCE](https://www.tinymce.com/)
 
-##Demo
+## Demo
 
 [Demo page](http://marucjmar.github.io/ember-cli-tinymce)
 
