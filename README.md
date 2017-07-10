@@ -1,18 +1,18 @@
-Ember-cli-tinymce
------------------
+# Ember-cli-tinymce
+
 This ember-cli addon provides you with a wysiwyg-editor component, based on [TinyMCE](https://www.tinymce.com/)
 
 ##Demo
 
 [Demo page](http://marucjmar.github.io/ember-cli-tinymce)
 
-#Installation
+## Installation
 To get started simply install the addon:
 
      ember install ember-cli-tinymce
 
 
-##Component
+### Component
 
 
     {{tinymce-editor options=options value=text}}
@@ -40,29 +40,12 @@ and in your controller
     }
   }
 ```
-##You can set the load partial
 
-environment.js config
+### Including TinyMCE
 
-    ENV:{
-      ...,
-      tinyMCE:{
-        load: false
-      }
-    }
+You can load TinyMCE from a CDN:
 
-In route
-
-    beforeModel(){
-      this._super(...arguments);
-      if (typeof tinymce == 'undefined'){
-        return Ember.$.getScript('//cdn.tinymce.com/4/tinymce.min.js');
-      }
-    }
-
-##You can also set the version to fetch from the CDN
- - be aware *ver* is a semver reflection of the Tinymce CDN which can introduce issues if a bad release is automatically picked up by your application
-```
+```js
 ENV:{
   ...,
   tinyMCE:{
@@ -71,7 +54,33 @@ ENV:{
 }
 ```
 
-#My reputation
+Be aware *ver* is a semver reflection of the Tinymce CDN which can introduce issues if a bad release is automatically picked up by your application
+
+Set this to `false` to disable including automatically:
+
+environment.js config
+
+```js
+ENV:{
+  ...,
+  tinyMCE:{
+    load: false
+  }
+}
+```
+
+And you can load it in your routes like so:
+
+```js
+beforeModel(){
+  this._super(...arguments);
+  if (typeof tinymce == 'undefined'){
+    return Ember.$.getScript('//cdn.tinymce.com/4/tinymce.min.js');
+  }
+}
+```
+
+## My reputation
 If you used and love this addon You can help me with my reputation, when you give me a star on github :+1:
 
 
