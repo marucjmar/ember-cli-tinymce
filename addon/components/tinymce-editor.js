@@ -66,7 +66,6 @@ export default Ember.Component.extend({
     if (editor) {
       editor.off('change keyup keydown keypress mousedown');
       editor.destroy();
-      this.set('editor', null);
     }
   })
 });
