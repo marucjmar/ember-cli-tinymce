@@ -35,7 +35,8 @@ export default Ember.Component.extend({
       return;
     }
     
-    editor.on('change keyup keydown keypress mousedown', run.bind(this, this.debounceContentChanged));
+    editor.on('change keyup keydown keypress mousedown',
+              run.bind(this, this.debounceContentChanged, editor, changeDebounce));
   }),
 
   initTiny: on('didInsertElement', observer('options', function() {
