@@ -19,8 +19,10 @@ export default Ember.Component.extend({
   },
 
   contentChanged(editor) {
-    if (!editor.isNotDirty) {
+    let content = editor.getContent();
+    if (!editor.isNotDirty && content != this.get('value')) {
       this.onValueChanged(editor.getContent());
+      editor.setDirty(false);
     }
   },
   
