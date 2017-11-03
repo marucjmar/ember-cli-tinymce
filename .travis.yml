@@ -6,6 +6,7 @@ node_js:
 sudo: false
 
 cache:
+  yarn: true
   directories:
     - node_modules
 
@@ -27,7 +28,7 @@ before_install:
   - npm install phantomjs-prebuilt
 
 install:
-  - npm install
+  - yarn install
   - bower install
 
 script:
