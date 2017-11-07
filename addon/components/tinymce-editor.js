@@ -21,7 +21,7 @@ export default Ember.Component.extend({
 
   contentChanged(editor) {
     let content = editor.getContent();
-    if (!editor.isNotDirty && content != this.get('value')) {
+    if (!editor.isNotDirty && content !== this.get('value')) {
       this.onValueChanged(editor.getContent());
       editor.setDirty(false);
     }
@@ -48,7 +48,7 @@ export default Ember.Component.extend({
     let initFunction = (editor) => {
       this.set('editor', editor);
       this.get('editor').setContent(this.get('value') || ''); //Set content with default text
-    }
+    };
 
     let customOptions = {
       selector: `#${this.get('elementId')}`,
@@ -62,7 +62,7 @@ export default Ember.Component.extend({
 
     run.later( () => {
       tinymce.init(Ember.assign({}, options, customOptions));
-    }, 10)
+    }, 10);
   })),
 
   cleanUp: on('willDestroyElement', function() {
