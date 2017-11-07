@@ -1,13 +1,14 @@
-/* global tinymce */
-
+/* global tinymce: true */
 import Ember from 'ember';
-const {observer, on, run} = Ember;
+const { observer, on, run } = Ember;
 
 export default Ember.Component.extend({
   editor: null,
+  classNames: ['tinymce-editor'],
   tagName: 'textarea',
   _contentChangedListener: null,
   changeDebounce: 10,
+  options: {},
 
   valueChanged: observer('value', function() {
     let {editor, value} = this.getProperties('editor', 'value');
@@ -22,9 +23,9 @@ export default Ember.Component.extend({
 
   contentChanged(editor) {
     let content = editor.getContent();
-    if (!editor.isNotDirty && content !== this.get('value')) {
+    if (editor.isDirty() && content !== this.get('value')) {
       this.onValueChanged(editor.getContent());
-      editor.setDirty(false);
+      editor.setDirty(true);
     }
   },
 
@@ -62,6 +63,7 @@ export default Ember.Component.extend({
     }
 
     run.later( () => {
+      if (typeof tinymce === 'undefined') { return; }
       tinymce.init(Ember.assign({}, options, customOptions));
     }, 10);
   })),
