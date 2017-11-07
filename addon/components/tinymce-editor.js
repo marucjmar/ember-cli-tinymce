@@ -4,6 +4,7 @@ const {observer, on, run} = Ember;
 
 export default Ember.Component.extend({
   editor: null,
+  classNames: ['tinymce-editor'],
   tagName: 'textarea',
   _contentChangedListener: null,
   changeDebounce: 10,

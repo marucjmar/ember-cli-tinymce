@@ -1,4 +1,5 @@
 # Ember-cli-tinymce
+
 [![Build Status](https://travis-ci.org/marucjmar/ember-cli-tinymce.svg?branch=master)](https://travis-ci.org/marucjmar/ember-cli-tinymce)
 
 This ember-cli addon provides you with a wysiwyg-editor component, based on [TinyMCE](https://www.tinymce.com/)
