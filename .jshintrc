@@ -30,6 +30,6 @@
   "esnext": true,
   "unused": true,
   "globals": {
-    "tinymce": true
+    "tinymce": false
   }
 }
