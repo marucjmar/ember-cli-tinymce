@@ -1,4 +1,4 @@
-/* jshint tinymce: true */
+/* global tinymce: true */
 import Ember from 'ember';
 const {observer, on, run} = Ember;
 
