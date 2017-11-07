@@ -1,4 +1,5 @@
 # Ember-cli-tinymce
+[![Build Status](https://travis-ci.org/marucjmar/ember-cli-tinymce.svg?branch=master)](https://travis-ci.org/marucjmar/ember-cli-tinymce)
 
 This ember-cli addon provides you with a wysiwyg-editor component, based on [TinyMCE](https://www.tinymce.com/)
 
@@ -36,7 +37,7 @@ and in your controller
   actions:{
     ...
     myOnChangedAction (value) => {
-      // Do something with the value. 
+      // Do something with the value.
       // At least the text should be updated:
       this.set('text', value)
     }
