@@ -1,9 +1,15 @@
 {
   "name": "ember-cli-tinymce",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.2.2",
+  "description": "The ember WYSIWYG editor powered by tinyMCE",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember",
+    "cli",
+    "wysiwyg",
+    "editor",
+    "emberjs",
+    "text"
   ],
   "license": "MIT",
   "author": "",
@@ -46,5 +52,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "configPath": "tests/dummy/config",
+  "demoURL": "http://marucjmar.github.io/ember-cli-tinymce"
 }
