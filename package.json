@@ -12,7 +12,7 @@
     "text"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Marcin Lazar",
   "directories": {
     "doc": "doc",
     "test": "tests"
