@@ -1,6 +1,6 @@
 /* global tinymce: true */
 import Ember from 'ember';
-const {observer, on, run} = Ember;
+const { observer, on, run } = Ember;
 
 export default Ember.Component.extend({
   editor: null,
