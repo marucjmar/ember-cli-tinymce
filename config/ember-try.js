@@ -19,7 +19,6 @@ module.exports = {
     },
     {
       name: 'ember-lts-2.12',
-      useYarn: true,
       npm: {
         devDependencies: {
           'ember-source': '2.12.0'

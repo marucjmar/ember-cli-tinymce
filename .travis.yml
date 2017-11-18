@@ -13,8 +13,6 @@ addons:
 
 cache:
   yarn: true
-  directories:
-    - $HOME/.npm
 
 env:
   global:
@@ -38,6 +36,9 @@ matrix:
 before_install:
   - npm config set spin false
   - yarn install
+
+install:
+  - yarn install --no-lockfile
 
 script:
   # Usually, it's ok to finish the test scenario without reverting
