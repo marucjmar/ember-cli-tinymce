@@ -53,6 +53,10 @@
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marucjmar/ember-cli-tinymce.git"
+  },
   "configPath": "tests/dummy/config",
   "demoURL": "http://marucjmar.github.io/ember-cli-tinymce"
 }
