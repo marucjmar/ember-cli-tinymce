@@ -48,6 +48,8 @@ export default Ember.Component.extend({
     let {options, editor} = this.getProperties('options', 'editor');
 
     let initFunction = (editor) => {
+      if (this.get('isDestroying')) { return }
+      
       this.set('editor', editor);
       this.get('editor').setContent(this.get('value') || ''); //Set content with default text
     };
