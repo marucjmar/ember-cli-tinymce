@@ -66,13 +66,27 @@ ENV:{
 
 Be aware *ver* is a semver reflection of the Tinymce CDN which can introduce issues if a bad release is automatically picked up by your application
 
+You can serve tinymce from local assets when `load` property is set to `assets`. This feature include `plugins` property, by default this addon include all plugins in installed tinymce. When this option is enabled you can set specific version of tinyMCE in `package.json`
+
+```js
+ENV:{
+  ...,
+  tinyMCE:{
+    load: 'assets', //default 'cdn'
+    plugins: ['code'] // default undefined
+    skin: 'lightgray', //defualt lightgray
+    themes: ['modern'] // default ['modern']
+  }
+}
+```
+
 Set this to `false` to disable including automatically:
 
 ```js
 ENV:{
   ...,
   tinyMCE:{
-    load: false
+    load: false, //default 'cdn'
   }
 }
 ```
