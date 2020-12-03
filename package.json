@@ -17,7 +17,10 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marucjmar/ember-cli-tinymce.git"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -42,10 +45,10 @@
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
+    "ember-modal-dialog": "2.3.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.16.0",
-    "loader.js": "^4.2.3",
-    "ember-modal-dialog": "2.3.0"
+    "loader.js": "^4.2.3"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
@@ -53,9 +56,5 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "http://marucjmar.github.io/ember-cli-tinymce"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/marucjmar/ember-cli-tinymce.git"
   }
 }
