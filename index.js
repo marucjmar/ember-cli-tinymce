@@ -3,17 +3,26 @@
 
 module.exports = {
   name: 'ember-cli-tinymce',
-  contentFor: function(type, config) {
-    var content = '';
+  contentFor: function (type, config) {
+    const apiKey = config['tinyMCE']['apiKey'];
 
-    if (type === 'head-footer' && config['tinyMCE'] && config['tinyMCE']['load']) {
-      var src = "https://cdn.tinymce.com/"+ config['tinyMCE']['version'] +"/tinymce.min.js";
-      var sriHash = config['tinyMCE']['sriHash'];
-      content = '<script type="text/javascript" src="' + src + '" integrity="' + sriHash + '" crossorigin="anonymous"></script>';
+    if (!apiKey) {
+      throw Error('No `apiKey` in tinyMCE env config');
     }
-    return content;
+
+    if (
+      type === 'head-footer' &&
+      config['tinyMCE'] &&
+      config['tinyMCE']['load']
+    ) {
+      const version = config['tinyMCE']['version'];
+      const referrerpolicy = config['tinyMCE']['refererPolicy'] || 'origin';
+      const src = `https://cdn.tiny.cloud/1/${apiKey}/tinymce/${version}/tinymce.min.js`;
+      return `<script type='text/javascript' src='${src}' crossorigin='${referrerpolicy}'></script>`;
+    }
+    return '';
   },
-  included: function(app) {
+  included: function (app) {
     app.import('app/styles/addons.css');
-  }
+  },
 };

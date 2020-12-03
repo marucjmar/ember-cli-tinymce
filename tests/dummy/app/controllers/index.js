@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   menuBar: true,
   options: {
     height: 300,
-    theme: 'modern',
+    theme: 'silver',
     plugins: [
       'advlist autolink lists link image charmap print preview hr anchor pagebreak',
       'searchreplace wordcount visualblocks visualchars code fullscreen',
