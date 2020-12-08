@@ -9,6 +9,7 @@ export default Ember.Component.extend({
   _contentChangedListener: null,
   changeDebounce: 10,
   options: {},
+  initDefer: null,
 
   valueChanged: observer('value', function() {
     let {editor, value} = this.getProperties('editor', 'value');
@@ -60,22 +61,35 @@ export default Ember.Component.extend({
     };
 
     if (editor){
+      this.cancelInitDefer();
       editor.setContent('');
       editor.destroy();
     }
 
-    run.later( () => {
+    const defer = run.later(() => {
       if (this.get('isDestroying') || this.get('isDestroyed')) { return; }
       if (typeof tinymce === 'undefined') { return; }
       tinymce.init(Ember.assign({}, options, customOptions));
     }, 10);
+
+    this.set('defer', defer);
   })),
 
   cleanUp: on('willDestroyElement', function() {
+    this.cancelInitDefer();
+
     let editor = this.get('editor');
     if (editor) {
       editor.off('change keyup keydown keypress mousedown');
       editor.destroy();
     }
-  })
+  }),
+
+  cancelInitDefer() {
+    const initDefe = this.get('initDefe');
+
+    if (initDefe) {
+      run.cancel(initDefe);
+    }
+  }
 });
