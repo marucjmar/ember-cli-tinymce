@@ -86,10 +86,10 @@ export default Ember.Component.extend({
   }),
 
   cancelInitDefer() {
-    const initDefe = this.get('initDefe');
+    const initDefer = this.get('initDefer');
 
-    if (initDefe) {
-      run.cancel(initDefe);
+    if (initDefer) {
+      run.cancel(initDefer);
     }
   }
 });
