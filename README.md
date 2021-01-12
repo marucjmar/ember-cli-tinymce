@@ -69,6 +69,19 @@ ENV:{
 
 Be aware _ver_ is a semver reflection of the Tinymce CDN which can introduce issues if a bad release is automatically picked up by your application
 
+You can load TinyMCE from a self hosted source:
+
+```js
+ENV:{
+  ...,
+  tinyMCE:{
+    srcScript: 'https://self_hosted_server_path'
+  }
+}
+```
+
+Remember if your self hosted resource resides in a different domain than your application, ensure you configure CORS otherwise aspects of the editor such as fonts, styles, skins, etc. may fail to load due to cross site scripting safety measures. 
+
 Set this to `false` to disable including automatically:
 
 ```js
