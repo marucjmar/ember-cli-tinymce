@@ -75,7 +75,7 @@ You can load TinyMCE from a self hosted source:
 ENV:{
   ...,
   tinyMCE:{
-    srcScript: 'https://self_hosted_server_path'
+    scriptSrc: 'https://path/to/locally-hosted/tinymce/js/tinymce.min.js'
   }
 }
 ```
