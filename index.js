@@ -17,7 +17,8 @@ module.exports = {
     ) {
       const version = config['tinyMCE']['version'];
       const referrerpolicy = config['tinyMCE']['refererPolicy'] || 'origin';
-      const src = `https://cdn.tiny.cloud/1/${apiKey}/tinymce/${version}/tinymce.min.js`;
+      const src = config['tinyMCE']['scriptSrc'] || `https://cdn.tiny.cloud/1/${apiKey}/tinymce/${version}/tinymce.min.js`;
+
       return `<script type='text/javascript' src='${src}' crossorigin='${referrerpolicy}'></script>`;
     }
     return '';
